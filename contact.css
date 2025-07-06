@@ -1,0 +1,45 @@
+*{
+    margin:0px;
+    background-color: black;
+    color:white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h1{
+    background-color:white;
+    color:black;
+    font-size:40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 10px;
+}
+h5{
+    margin:20px;
+    margin-left:10px;
+}
+.placards,.placards li{
+    display:contents;
+    position: absolute;
+    left:5%;
+    margin-left: 0px;
+}
+#navbar
+{
+    margin-top: 30px;
+    position: absolute;
+    right:15px;
+    top:20px;
+}
+#navbar li
+{
+    font-size: 15px;
+    color:black;
+    cursor: pointer;
+}
+#navbar li,#navbar
+{
+    display: inline;
+    padding:0px;
+}
+.contdiv ul,.contdiv li
+{
+    background-color: white;
+}

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <div class="header">
+        <h1>
+        WORLD CLOCK
+        <img class="image" src="images/time_8211151.png" style="width:95px; height:95px; padding-left: 10px;vertical-align:-12px;">
+        </h1>
+        <ul id="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li>|</li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li>|</li>
+            <li><a href="contactus.html">Contact</a></li>
+        </ul>
+    </div>
+    <div class="selectclock">
+        <select onchange="selecttime()" id="selectbox" style="width:250px; height:50px; font-size: 20px; font-style: oblique;margin-left: 20px; display:block; background-color:yellow;margin-top:40px;border-width: 3px; border-color: red;border-style:ridge;">
+            <option>~~~Select Country~~~</option>
+            <option>India</option>
+            <option>Srilanka</option>
+            <option>Singapore</option>
+            <option>USA</option>
+            <option>UK</option>
+            <option>UAE</option>
+            <option>Malaysia</option>
+            <option>Norway</option>
+            <option>Denmark</option>
+        </select>
+    </div>
+    <div class="date">
+        <ul id="blo2">
+            <li>Date</li>
+            <li>_</li>
+            <li>Month</li>
+            <li>_</li>
+            <li>Year</li>
+        </ul>
+    </div>
+    <div class="time">
+        <ul id="blo1">
+            <li>Hrs</li>
+            <li>:</li>
+            <li>Min</li>
+            <li>:</li>
+            <li>Sec</li>
+        </ul>
+    </div>
+</body>
+</html>
+
+<script>
+    var country=document.getElementById("selectbox")
+    var selectedcountry=country.options[country.selectedIndex].text
+    country.options=selectedcountry
+    
+    function selecttime()
+    {
+        var timeword=document.getElementById("selectbox").value
+        var time=document.querySelector(".time")
+        var date=document.querySelector(".date")
+        var datelist=document.getElementById("blo2")
+
+        var d=new Date()
+
+        var monthres=['January','Febraury','March','April','May','June','July','August','September','October','November','December']
+
+        var dat=d.getDate()
+        var mon=monthres[d.getMonth()]
+        var yr=d.getFullYear()
+        var h=d.getHours()
+        var m=d.getMinutes()
+        var s=d.getSeconds()
+
+        if(timeword=='USA'){
+            date.style.color="white"
+            time.style.color="white"
+            h=h-10
+            m=m+30
+            if(h<0){
+                h=24+h
+            }
+            if(m>60)
+            {
+                m=m-60
+                h=h+1
+            }
+            h=h<10?'0'+h:h
+            m=m<10?'0'+m:m
+            s=s<10?'0'+s:s
+            var offset=h<12?'AM':'PM'
+            date.innerHTML=dat+'_'+mon+'_'+yr
+            time.innerHTML=h+":"+m+":"+s+" "+offset
+        }
+        else if(timeword=='India')
+        {
+            date.style.color="white"
+            time.style.color="white"
+            if(h<0){
+                h=24+h
+            }
+            if(m>60)
+            {
+                m=m-60
+                h=h+1
+            }
+            h=h<10?'0'+h:h
+            m=m<10?'0'+m:m
+            s=s<10?'0'+s:s
+            var offset=h<12?'AM':'PM'
+            date.innerHTML=dat+'_'+mon+'_'+yr
+            time.innerHTML=h+":"+m+":"+s+" "+offset
+        }
+        else if(timeword=='Srilanka')
+        {
+            date.style.color="white"
+            time.style.color="white"
+            if(h<0){
+                h=24+h
+            }
+            if(m>60)
+            {
+                m=m-60
+                h=h+1
+            }
+            h=h<10?'0'+h:h
+            m=m<10?'0'+m:m
+            s=s<10?'0'+s:s
+            var offset=h<12?'AM':'PM'
+            date.innerHTML=dat+'_'+mon+'_'+yr
+            time.innerHTML=h+":"+m+":"+s+" "+offset
+        }
+        else if(timeword=='Singapore')
+        {
+            date.style.color="white"
+            time.style.color="white"
+            h=h+2
+            m=m+30
+            if(h<0){
+                h=24+h
+            }
+            if(m>60)
+            {
+                m=m-60
+                h=h+1
+            }
+            h=h<10?'0'+h:h
+            m=m<10?'0'+m:m
+            s=s<10?'0'+s:s
+            var offset=h<12?'AM':'PM'
+            date.innerHTML=dat+'_'+mon+'_'+yr
+            time.innerHTML=h+":"+m+":"+s+" "+offset
+        }
+        else if(timeword=='UK')
+        {
+            date.style.color="white"
+            time.style.color="white"
+            h=h-5
+            m=m+30
+            if(h<0){
+                h=24+h
+            }
+            if(m>60)
+            {
+                m=m-60
+                h=h+1
+            }
+            h=h<10?'0'+h:h
+            m=m<10?'0'+m:m
+            s=s<10?'0'+s:s
+            var offset=h<12?'AM':'PM'
+            date.innerHTML=dat+'_'+mon+'_'+yr
+            time.innerHTML=h+":"+m+":"+s+" "+offset
+        }
+        else if(timeword=='UAE')
+        {
+            date.style.color="white"
+            time.style.color="white"
+            h=h-2
+            m=m+30
+            if(h<0){
+                h=24+h
+            }
+            if(m>60)
+            {
+                m=m-60
+                h=h+1
+            }
+            h=h<10?'0'+h:h
+            m=m<10?'0'+m:m
+            s=s<10?'0'+s:s
+            var offset=h<12?'AM':'PM'
+            date.innerHTML=dat+'_'+mon+'_'+yr
+            time.innerHTML=h+":"+m+":"+s+" "+offset
+        }
+        else if(timeword=='Malaysia')
+        {
+            date.style.color="white"
+            time.style.color="white"
+            h=h+2
+            m=m+30
+            if(h<0){
+                h=24+h
+            }
+            if(m>60)
+            {
+                m=m-60
+                h=h+1
+            }
+            h=h<10?'0'+h:h
+            m=m<10?'0'+m:m
+            s=s<10?'0'+s:s
+            var offset=h<12?'AM':'PM'
+            date.innerHTML=dat+'_'+mon+'_'+yr
+            time.innerHTML=h+":"+m+":"+s+" "+offset
+        }
+        else if(timeword=='Norway')
+        {
+            date.style.color="white"
+            time.style.color="white"
+            h=h-4
+            m=m+30
+            if(h<0){
+                h=24+h
+            }
+            if(m>60)
+            {
+                m=m-60
+                h=h+1
+            }
+            h=h<10?'0'+h:h
+            m=m<10?'0'+m:m
+            s=s<10?'0'+s:s
+            var offset=h<12?'AM':'PM'
+            date.innerHTML=dat+'_'+mon+'_'+yr
+            time.innerHTML=h+":"+m+":"+s+" "+offset
+        }
+        else if(timeword=='Denmark')
+        {
+            date.style.color="white"
+            time.style.color="white"
+            h=h-4
+            m=m+30
+            if(h<0){
+                h=24+h
+            }
+            if(m>60)
+            {
+                m=m-60
+                h=h+1
+            }
+            h=h<10?'0'+h:h
+            m=m<10?'0'+m:m
+            s=s<10?'0'+s:s
+            var offset=h<12?'AM':'PM'
+            date.innerHTML=dat+'_'+mon+'_'+yr
+            time.innerHTML=h+":"+m+":"+s+" "+offset
+        }
+    }
+    setInterval(selecttime,1000)
+</script>
